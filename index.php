@@ -1,37 +1,55 @@
 <?php
 include('Horaire.php');
+/*
+Il y a 6 données à récupérer de l'adresse : nom, debut, nbPeriodes, duree, pause et jours
+La présence de chaque donnée doit être validée individuellement.
+*/
+
+// Récupération de la donnée "nom". Valeur par défaut: ""
 $nom = '';
 if (isset($_GET['nom'])) {
 	$nom = $_GET['nom'];
 }
+
+// Récupération de la donnée "debut". Valeur par défaut: "6:00"
 $debut = '06:00';
 if (isset($_GET['debut'])) {
 	$debut = $_GET['debut'];
 }
-$minutesDebut = Horaire::heuresEnMinutes($debut);
+
+// Récupération de la donnée "debut". Valeur par défaut: 12
 $nbPeriodes = 12;
 if (isset($_GET['nbPeriodes'])) {
 	$nbPeriodes = intval($_GET['nbPeriodes']);
 }
+
+// Récupération de la donnée "duree". Valeur par défaut: 60
 $duree = 60;
 if (isset($_GET['duree'])) {
 	$duree = intval($_GET['duree']);
 }
+
+// Récupération de la donnée "pause". Valeur par défaut: 0
 $pause = 0;
 if (isset($_GET['pause'])) {
 	$pause = intval($_GET['pause']);
 }
+
+// Récupération de la donnée "jours". Valeur par défaut: array("dimanche"...)
 $jours = array('dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi');
 if (isset($_GET['jours'])) {
 	$jours = $_GET['jours'];
 	
 	//Version plus flexible qui accepte également les sauts de lignes
 	$jours = preg_replace("#\\r\\n|\\n\\r|\\n|\\r#", ";", $jours);
-
+	
 	$jours = explode(";",$jours);
 	//Pour enlever les vides
 	$jours = array_filter($jours);
 }
+
+// Création de l'affichage final en utilisant les données recueillies.
+$minutesDebut = Horaire::heuresEnMinutes($debut);
 $affichage = Horaire::affichage($nom, $minutesDebut, $nbPeriodes, $duree, $pause, $jours);
 
 ?><!DOCTYPE html>
@@ -48,7 +66,6 @@ $affichage = Horaire::affichage($nom, $minutesDebut, $nbPeriodes, $duree, $pause
 	<footer>
 		<span>&copy; Cégep de Saint-Jérôme</span>
 		<span>Département des techniques d'Intégration multimédia</span>
-		<span>Intégration Web III</span>
 		<span>Martin Boudreau</span>
 	</footer>
 	<div class="sections">
@@ -68,7 +85,6 @@ $affichage = Horaire::affichage($nom, $minutesDebut, $nbPeriodes, $duree, $pause
 			<li><a href="index.php?jours=Lundi;Mardi;Mercredi;Jeudi;Vendredi">Essai jours</a></li>
 			<li><a href="index.php?nom=Rita+Raté&amp;debut=08:00&amp;nbPeriodes=11&amp;duree=55&amp;pause=5&amp;jours=Lundi;Mardi;Mercredi;Jeudi;Vendredi">Essai TOUT</a></li>
 			<li><a href="formulaire.php">Formulaire</a></li>
-			<li><a href="consignes.html">(Les consignes)</a></li>
 			</ul>
 			<h2>Formulaire</h2>
 			<?php include "form.inc.php" ?>
