@@ -6,36 +6,22 @@ La présence de chaque donnée doit être validée individuellement.
 */
 
 // Récupération de la donnée "nom". Valeur par défaut: ""
-$nom = '';
-if (isset($_GET['nom'])) {
-	$nom = $_GET['nom'];
-}
+
 
 // Récupération de la donnée "debut". Valeur par défaut: "6:00"
-$debut = '06:00';
-if (isset($_GET['debut'])) {
-	$debut = $_GET['debut'];
-}
+
 
 // Récupération de la donnée "debut". Valeur par défaut: 12
-$nbPeriodes = 12;
-if (isset($_GET['nbPeriodes'])) {
-	$nbPeriodes = intval($_GET['nbPeriodes']);
-}
+
 
 // Récupération de la donnée "duree". Valeur par défaut: 60
-$duree = 60;
-if (isset($_GET['duree'])) {
-	$duree = intval($_GET['duree']);
-}
+
 
 // Récupération de la donnée "pause". Valeur par défaut: 0
-$pause = 0;
-if (isset($_GET['pause'])) {
-	$pause = intval($_GET['pause']);
-}
+
 
 // Récupération de la donnée "jours". Valeur par défaut: array("dimanche"...)
+// CETTE SECTION EST COMPLÈTE
 $jours = array('dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi');
 if (isset($_GET['jours'])) {
 	$jours = $_GET['jours'];
