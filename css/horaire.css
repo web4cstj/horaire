@@ -9,40 +9,23 @@ body {
 }
 
 div.interface {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   min-height: 100%;
 }
-
 div.interface > header, div.interface > footer {
   background-color: #29293d;
   color: white;
 }
-
 div.interface > footer {
-  -webkit-box-ordinal-group: 1001;
-      -ms-flex-order: 1000;
-          order: 1000;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  order: 1000;
   display: flex;
-  padding: .5em;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  padding: 0.5em;
+  justify-content: space-between;
 }
 
 div.sections {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  flex: 1 0 auto;
   display: flex;
 }
 
@@ -52,24 +35,20 @@ table.horaire {
   background-color: #FFF;
   border: 3px solid black;
 }
-
 table.horaire > * > tr td, table.horaire > * > tr th {
   border: 1px solid black;
 }
-
 table.horaire > thead > tr > th {
   background-color: #000;
   color: white;
 }
-
 table.horaire > thead > tr > th > h1 {
   background-color: #333;
   margin: 0;
   color: white;
-  padding: .1em 0 .2em;
+  padding: 0.1em 0 0.2em;
   line-height: 1;
 }
-
 table.horaire > tbody > tr > th {
   background-color: #666;
   color: white;
@@ -77,13 +56,11 @@ table.horaire > tbody > tr > th {
 
 h1 {
   text-align: center;
-  line-height: .8;
+  line-height: 0.8;
 }
 
 section.affichage {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 0px;
-          flex: 1 1 0;
+  flex: 1 1 0;
   overflow-y: auto;
   padding: 1em;
 }
@@ -93,15 +70,13 @@ section.options {
   padding: 1em;
   background-color: rgba(0, 0, 0, 0.1);
 }
-
 section.options h1 {
   background-color: #29293d;
   color: white;
   margin: 0;
   font-size: 1.5em;
-  padding: .25em;
+  padding: 0.25em;
 }
-
 section.options h2 {
   margin-bottom: 0;
   font-size: 1.2em;
@@ -112,74 +87,48 @@ ul.essais {
   padding: 0;
   padding-left: 1.5em;
 }
-
 ul.essais a {
   color: inherit;
 }
 
 form {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   width: 21ch;
   margin: auto;
   background-color: white;
   padding: 1em;
   border-radius: 1em;
 }
-
 form > div {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: .2em 0;
+  align-items: center;
+  margin: 0.2em 0;
 }
-
 form > div > label {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 6ch;
-          flex: 0 0 6ch;
+  flex: 0 0 6ch;
   line-height: 1;
-  padding: 0 .2em;
+  padding: 0 0.2em;
   font-weight: bold;
   text-align: right;
 }
-
 form > div > label ~ * {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
+  flex: 1 0 auto;
 }
-
 form > div:last-child {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
-
 form input {
   text-align: right;
 }
-
 form input, form textarea {
   font: inherit;
 }
-
 form textarea {
   resize: vertical;
 }
-
 form #champ-nbPeriodes > label {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 @media screen {
@@ -187,10 +136,8 @@ form #champ-nbPeriodes > label {
     background-color: #ccccdd;
   }
 }
-
 @media print {
   div.options {
     display: none;
   }
-}
-/*# sourceMappingURL=horaire.css.map */
+}/*# sourceMappingURL=horaire.css.map */
